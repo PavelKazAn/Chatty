@@ -3,7 +3,6 @@ package client;
 import constants.Command;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,14 +17,14 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.stage.WindowEvent;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
-import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -56,6 +55,7 @@ public class Controller implements Initializable {
     private Stage stage;
     private Stage regStage;
     private RegController regController;
+    private ChatHistory clientHistory;
 
     public void setAuthenticated(boolean authenticated) {
         this.authenticated = authenticated;
@@ -73,6 +73,7 @@ public class Controller implements Initializable {
         textArea.clear();
         setTitle(nickname);
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -111,20 +112,26 @@ public class Controller implements Initializable {
                             }
                             if (str.startsWith(Command.AUTH_OK)) {
                                 nickname = str.split(" ")[1];
+                                clientHistory = new ChatHistory(loginField.getText());
                                 setAuthenticated(true);
                                 break;
                             }
-                            if(str.equals("/reg_ok") || str.equals("/reg_no")){
+                            if (str.equals("/reg_ok") || str.equals("/reg_no")) {
                                 regController.result(str);
                             }
                         } else {
                             textArea.appendText(str + "\n");
+                            clientHistory.appendMessage(str);
                         }
                     }
                     //цикл работы
+                    if (authenticated) {
+//                        showLast100Lines();
+                    }
                     while (authenticated) {
                         String str = in.readUTF();
-
+                        clientHistory.writeHistoryChat();
+                        showLast100Lines();
                         if (str.startsWith("/")) {
                             if (str.equals(Command.END)) {
                                 break;
@@ -149,6 +156,7 @@ public class Controller implements Initializable {
 
                         } else {
                             textArea.appendText(str + "\n");
+                            clientHistory.appendMessage(str);
                         }
                     }
                 } catch (IOException e) {
@@ -172,9 +180,14 @@ public class Controller implements Initializable {
     @FXML
     public void sendMsg(ActionEvent actionEvent) {
         try {
-            out.writeUTF(textField.getText());
-            textField.clear();
-            textField.requestFocus();
+            String message = textField.getText();
+            if (message.isEmpty()) {
+                textField.clear();
+            } else {
+                out.writeUTF(textField.getText());
+                textField.clear();
+                textField.requestFocus();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -239,6 +252,16 @@ public class Controller implements Initializable {
         }
 
         regStage.show();
+    }
+
+    private void showLast100Lines() {
+        ArrayList<String> arrLines = clientHistory.getLast100LinesHistoryList();
+        for (String arrLine : arrLines) {
+            if (!arrLine.isEmpty()) {
+                textArea.appendText(arrLine);
+                textArea.clear();
+            }
+        }
     }
 
     public void registration(String login, String password, String nickname) {

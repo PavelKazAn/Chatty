@@ -1,0 +1,136 @@
+[ qqqqqwwwwweeeee ]: ghbdtn
+[ nick2 ]: привет всем
+[ qqqqqwwwwweeeee ]: привет 
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: ghbdtn
+[ nick2 ]: привет всем
+[ qqqqqwwwwweeeee ]: привет
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: ghbdtn
+[ nick2 ]: привет всем
+[ qqqqqwwwwweeeee ]: привет
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: ghbdtn
+[ nick2 ]: привет всем
+[ qqqqqwwwwweeeee ]: привет
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
+[ qqqqqwwwwweeeee ]: привет 3
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick2 ]: привет из окна 2
+[ nick1 ]: привет из окна 1
+[ nick2 ]: привет из окна 2
+[ qqqqqwwwwweeeee ]: привет из окна 3
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет из окна 1
+[ nick1 ]: привет окну 3
