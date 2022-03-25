@@ -23,8 +23,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -114,6 +112,7 @@ public class Controller implements Initializable {
                                 nickname = str.split(" ")[1];
                                 clientHistory = new ChatHistory(loginField.getText());
                                 setAuthenticated(true);
+                                textArea.appendText(clientHistory.getLast100LinesHistoryList());
                                 break;
                             }
                             if (str.equals("/reg_ok") || str.equals("/reg_no")) {
@@ -125,13 +124,9 @@ public class Controller implements Initializable {
                         }
                     }
                     //цикл работы
-                    if (authenticated) {
-//                        showLast100Lines();
-                    }
                     while (authenticated) {
                         String str = in.readUTF();
                         clientHistory.writeHistoryChat();
-                        showLast100Lines();
                         if (str.startsWith("/")) {
                             if (str.equals(Command.END)) {
                                 break;
@@ -250,18 +245,7 @@ public class Controller implements Initializable {
         if (regStage == null) {
             createRegStage();
         }
-
         regStage.show();
-    }
-
-    private void showLast100Lines() {
-        ArrayList<String> arrLines = clientHistory.getLast100LinesHistoryList();
-        for (String arrLine : arrLines) {
-            if (!arrLine.isEmpty()) {
-                textArea.appendText(arrLine);
-                textArea.clear();
-            }
-        }
     }
 
     public void registration(String login, String password, String nickname) {

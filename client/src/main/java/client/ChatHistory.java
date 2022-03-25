@@ -1,6 +1,7 @@
 package client;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -9,8 +10,9 @@ import java.util.List;
 public class ChatHistory implements AutoCloseable {
     private String login;
     private File historyFile;
-    private FileReader fileReader;
     private PrintWriter printWriter;
+//    String fileLocation = "C:\\JavaPractice\\Chatty\\client\\src\\main\\java\\client\\chatHistory\\history_" + login + ".txt";
+
 
     public ChatHistory(String login) {
         this.login = login;
@@ -41,22 +43,24 @@ public class ChatHistory implements AutoCloseable {
         printWriter.close();
     }
 
-    public ArrayList<String> getLast100LinesHistoryList() {
-        ArrayList<String> arrLines = new ArrayList<>();
-        ArrayList<String> arrLines2 = new ArrayList<>();
+    public String getLast100LinesHistoryList() {
+        StringBuilder text = new StringBuilder();
         try {
-            arrLines = (ArrayList<String>) Files.readAllLines(Paths.get("C:\\JavaPractice\\Chatty\\client\\src\\main\\java\\client\\chatHistory\\history_" + login + ".txt"));
+            List<String> textList = Files.readAllLines(Paths.get("C:\\JavaPractice\\Chatty\\client\\src\\main\\java\\client\\chatHistory\\history_" + login + ".txt"));
+            if (textList.size() < 100) {
+                for (String line : textList) {
+                    text.append(line).append(System.lineSeparator());
+                }
+            }else{
+                for (int i = textList.size() - 100 ; i < textList.size() ; i++) {
+                    text.append(textList.get(i)).append(System.lineSeparator());
+                }
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (arrLines.size() > 100) {
-            for (int i = arrLines.size() - 100; i < 100; i++) {
-                arrLines2.add(arrLines.get(i));
-            }
-            return arrLines2;
-        } else {
-            return arrLines;
-        }
+        return text.toString();
     }
 
     @Override
