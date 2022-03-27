@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -57,7 +56,8 @@ public class Controller implements Initializable {
     private Stage regStage;
     private RegController regController;
     private ChatHistory clientHistory;
-    private ExecutorService service = Executors.newSingleThreadExecutor();
+
+    private ExecutorService executorService = Executors.newSingleThreadExecutor();
 
 
     public void setAuthenticated(boolean authenticated) {
@@ -103,7 +103,7 @@ public class Controller implements Initializable {
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
 
-            service.execute(() -> {
+            executorService.execute(() -> {
                 try {
                     //цикл аутентификации
                     while (true) {
@@ -176,7 +176,7 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
 
-        service.shutdown();
+        executorService.shutdown();
     }
 
     @FXML

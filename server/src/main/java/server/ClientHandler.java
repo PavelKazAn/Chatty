@@ -19,7 +19,7 @@ public class ClientHandler {
     private boolean authenticated;
     private String nickname;
     private String login;
-    private ExecutorService service = Executors.newSingleThreadExecutor();
+    private ExecutorService executorService = Executors.newSingleThreadExecutor();
 
 
     public ClientHandler(Server server, Socket socket) {
@@ -30,7 +30,7 @@ public class ClientHandler {
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
 
-            service.execute(() -> {
+            executorService.execute(() -> {
                 try {
                     socket.setSoTimeout(120000);
                     //цикл аутентификации
@@ -142,7 +142,7 @@ public class ClientHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        service.shutdown();
+        executorService.shutdown();
     }
 
     public void sendMsg(String msg) {
