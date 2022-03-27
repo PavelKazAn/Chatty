@@ -7,6 +7,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ClientHandler {
     private Server server;
@@ -17,6 +19,8 @@ public class ClientHandler {
     private boolean authenticated;
     private String nickname;
     private String login;
+    private ExecutorService executorService = Executors.newSingleThreadExecutor();
+
 
     public ClientHandler(Server server, Socket socket) {
         try {
@@ -26,7 +30,7 @@ public class ClientHandler {
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
 
-            new Thread(() -> {
+            executorService.execute(() -> {
                 try {
                     socket.setSoTimeout(120000);
                     //цикл аутентификации
@@ -44,8 +48,7 @@ public class ClientHandler {
                                 if (token.length < 3) {
                                     continue;
                                 }
-                                String newNick = server.getAuthService()
-                                        .getNicknameByLoginAndPassword(token[1], token[2]);
+                                String newNick = server.getAuthService().getNicknameByLoginAndPassword(token[1], token[2]);
                                 login = token[1];
                                 if (newNick != null) {
                                     if (!server.isLoginAuthenticated(login)) {
@@ -134,11 +137,12 @@ public class ClientHandler {
                     }
                 }
 
-            }).start();
+            });
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+        executorService.shutdown();
     }
 
     public void sendMsg(String msg) {
