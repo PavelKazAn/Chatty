@@ -1,0 +1,61 @@
+апр 04, 2022 6:18:15 PM server.LoggersService sendInfo
+INFO: Server started
+апр 04, 2022 6:18:26 PM server.LoggersService sendInfo
+INFO: Server started
+апр 04, 2022 6:24:06 PM server.LoggersService sendInfo
+INFO: Server started
+апр 04, 2022 6:24:21 PM server.LoggersService sendInfo
+INFO: Client connected
+апр 04, 2022 6:24:23 PM server.LoggersService sendInfo
+INFO: /auth qwe qwe
+апр 04, 2022 6:24:36 PM server.LoggersService sendWarning
+WARNING: Connection reset
+апр 04, 2022 6:24:36 PM server.LoggersService sendInfo
+INFO: Client disconnected
+апр 04, 2022 6:25:51 PM server.LoggersService sendInfo
+INFO: Client connected
+апр 04, 2022 6:25:56 PM server.LoggersService sendInfo
+INFO: /auth login1 pass1
+апр 04, 2022 6:25:56 PM server.LoggersService sendWarning
+WARNING: null
+апр 04, 2022 6:25:56 PM server.LoggersService sendInfo
+INFO: Client disconnected
+апр 04, 2022 6:26:24 PM server.LoggersService sendInfo
+INFO: Server started
+апр 04, 2022 6:26:34 PM server.LoggersService sendInfo
+INFO: Client connected
+апр 04, 2022 6:26:41 PM server.LoggersService sendInfo
+INFO: Client connected
+апр 04, 2022 6:26:52 PM server.LoggersService sendInfo
+INFO: Client disconnected
+апр 04, 2022 6:27:00 PM server.LoggersService sendInfo
+INFO: Client connected
+апр 04, 2022 6:27:07 PM server.LoggersService sendInfo
+INFO: Client disconnected
+апр 04, 2022 6:27:09 PM server.LoggersService sendInfo
+INFO: Client disconnected
+апр 04, 2022 6:28:59 PM server.LoggersService sendInfo
+INFO: Server started
+апр 04, 2022 6:29:04 PM server.LoggersService sendInfo
+INFO: Client connected
+апр 04, 2022 6:29:04 PM server.LoggersService sendInfo
+INFO: /auth qwe qwe
+апр 04, 2022 6:29:10 PM server.LoggersService sendInfo
+INFO: Client disconnected 
+qwe
+апр 04, 2022 6:30:12 PM server.LoggersService sendInfo
+INFO: Server started
+апр 04, 2022 6:30:16 PM server.LoggersService sendInfo
+INFO: Client connected
+апр 04, 2022 6:30:16 PM server.LoggersService sendInfo
+INFO: /auth qwe qwe
+апр 04, 2022 6:30:21 PM server.LoggersService sendInfo
+INFO: qweClient disconnected
+апр 04, 2022 6:32:25 PM server.LoggersService sendInfo
+INFO: Server started
+апр 04, 2022 6:32:31 PM server.LoggersService sendInfo
+INFO: Client connected
+апр 04, 2022 6:32:31 PM server.LoggersService sendInfo
+INFO: /auth qwe qwe
+апр 04, 2022 6:32:39 PM server.LoggersService sendInfo
+INFO: Login: qwe disconnected
