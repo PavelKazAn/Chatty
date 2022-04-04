@@ -14,6 +14,8 @@ public class Server {
     private List<ClientHandler> clients;
     private AuthService authService;
 
+    LoggersService loggerServer = new LoggersService(Server.class);
+
     public Server() {
         clients = new CopyOnWriteArrayList<>();
 //        authService = new SimpleAuthService();
@@ -26,11 +28,13 @@ public class Server {
 
         try {
             server = new ServerSocket(PORT);
+            loggerServer.sendInfo("Server started");
             System.out.println("Server started");
 
             while (true) {
                 socket = server.accept();
                 System.out.println("Client connected");
+                loggerServer.sendInfo("Client connected");
                 new ClientHandler(this, socket);
             }
 

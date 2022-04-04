@@ -20,6 +20,7 @@ public class ClientHandler {
     private String nickname;
     private String login;
     private ExecutorService executorService = Executors.newSingleThreadExecutor();
+    LoggersService loggerClientHandler = new LoggersService(ClientHandler.class);
 
 
     public ClientHandler(Server server, Socket socket) {
@@ -36,6 +37,7 @@ public class ClientHandler {
                     //цикл аутентификации
                     while (true) {
                         String str = in.readUTF();
+                        loggerClientHandler.sendInfo(str);
 
                         if (str.startsWith("/")) {
                             if (str.equals(Command.END)) {
@@ -123,13 +125,16 @@ public class ClientHandler {
                         }
                     }
 
+
                 } catch (SocketTimeoutException e) {
                     sendMsg(Command.END);
                 } catch (IOException e) {
+                    loggerClientHandler.sendWarning(e.getMessage());
                     e.printStackTrace();
                 } finally {
                     server.unsubscribe(this);
-                    System.out.println("Client disconnected");
+                    loggerClientHandler.sendInfo("Login: " + login + " disconnected");
+                    System.out.println(login + "Client disconnected");
                     try {
                         socket.close();
                     } catch (IOException e) {
@@ -140,6 +145,7 @@ public class ClientHandler {
             });
 
         } catch (IOException e) {
+            loggerClientHandler.sendWarning(e.getMessage());
             e.printStackTrace();
         }
         executorService.shutdown();
@@ -149,6 +155,7 @@ public class ClientHandler {
         try {
             out.writeUTF(msg);
         } catch (IOException e) {
+            loggerClientHandler.sendWarning(e.getMessage());
             e.printStackTrace();
         }
     }

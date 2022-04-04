@@ -20,6 +20,7 @@ public class SQLHandler {
         }
     }
 
+
     private static void prepareAllStatements() throws SQLException {
         psGetNickname = connection.prepareStatement("SELECT nickname FROM users WHERE login = ? AND password = ?;");
         psRegistration = connection.prepareStatement("INSERT INTO users(login, password, nickname) VALUES (? ,? ,? );");
